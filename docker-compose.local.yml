@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  micro-service:
+    container_name: micro-service
+    build:
+      dockerfile: Dockerfile.local
+    volumes:
+      - ./:/var/www/html/
+      - ./apache_log/:/var/log/apache2/
+      - ./apache_php_log/:/var/log/php/
+    ports:
+      - 8000:80
